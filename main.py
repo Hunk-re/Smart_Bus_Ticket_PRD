@@ -2,15 +2,15 @@ import streamlit as st
 
 from config import MENU_OPTIONS
 from data import load_starting_data
-from view_routes import page_view_routes
-from search_route import page_search_route
-from book_ticket import page_book_ticket
-from view_bookings import page_view_bookings
-from cancel_booking import page_cancel_booking
-from seat_availability import page_seat_availability
-from report import page_report
-from schedule import page_schedule
-from exit_page import page_exit
+from views.view_routes import page_view_routes
+from views.search_route import page_search_route
+from views.book_ticket import page_book_ticket
+from views.view_bookings import page_view_bookings
+from views.cancel_booking import page_cancel_booking
+from views.seat_availability import page_seat_availability
+from views.report import page_report
+from views.schedule import page_schedule
+from views.exit_page import page_exit
 
 
 def main():
