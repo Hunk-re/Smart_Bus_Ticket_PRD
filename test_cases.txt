@@ -1,0 +1,69 @@
+SMART BUS - TEST CASES
+Run each test in a FRESH session (restart the app / refresh the page) when a clean state is needed.
+Fill in the "Actual result" and "Matched?" columns while testing.
+
+TC-01 | View all routes
+  Action   : Menu 1 - View Available Routes
+  Expected : All five routes and seat status appear.
+  Actual   : ______________________   Matched? Y / N
+
+TC-02 | Search Hyderabad
+  Action   : Menu 2 - search "hyderabad"
+  Expected : R101, R103, R105 appear.
+  Actual   : ______________________   Matched? Y / N
+
+TC-03 | Unknown city
+  Action   : Menu 2 - search "Atlantis"
+  Expected : "No matching routes found." App keeps working.
+  Actual   : ______________________   Matched? Y / N
+
+TC-04 | Book two seats
+  Action   : Menu 3 - Ahmed, 24, R101, 2 seats
+  Expected : Booking confirmed, total Rs. 2,400, R101 shows 38/40.
+  Actual   : ______________________   Matched? Y / N
+
+TC-05 | Zero seats
+  Action   : Menu 3 - valid details, seats = 0
+  Expected : Error shown; no booking; seats unchanged.
+  Actual   : ______________________   Matched? Y / N
+
+TC-06 | Too many seats
+  Action   : Menu 3 - R101, seats = 41
+  Expected : Error shown; availability not negative.
+  Actual   : ______________________   Matched? Y / N
+
+TC-07 | Cancel confirmed booking
+  Action   : Menu 5 - enter a Confirmed booking ID
+  Expected : Status becomes Cancelled; seats restored correctly.
+  Actual   : ______________________   Matched? Y / N
+
+TC-08 | Cancel same booking again
+  Action   : Menu 5 - enter the same ID again
+  Expected : Rejected; seats NOT restored a second time.
+  Actual   : ______________________   Matched? Y / N
+
+TC-09 | Report with no bookings
+  Action   : Menu 7 on a fresh session
+  Expected : Booking totals, seats and revenue are 0; fully booked routes = 0.
+  Actual   : ______________________   Matched? Y / N
+
+TC-10 | Book all seats
+  Action   : Menu 3 - R103, 32 seats
+  Expected : Success; R103 shows 0/32 and "Fully Booked".
+  Actual   : ______________________   Matched? Y / N
+
+TC-11 | Report after cancellation
+  Action   : Cancel a booking, then Menu 7
+  Expected : Cancelled count increases; cancelled fare not in revenue.
+  Actual   : ______________________   Matched? Y / N
+
+TC-12 | Invalid menu option
+  Action   : Menu is a radio list, so invalid choices cannot be typed.
+             Instead test invalid typed inputs: blank name, age "abc", age -5, unknown route "R999".
+  Expected : A clear error for each; no data changes.
+  Actual   : ______________________   Matched? Y / N
+
+EXTRA | Empty bookings list
+  Action   : Menu 4 on a fresh session
+  Expected : "No bookings found."
+  Actual   : ______________________   Matched? Y / N
